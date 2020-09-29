@@ -4,7 +4,7 @@
   "private": true,
   "main": "public/electron.js",
   "description": "Simple boilerplate for developing an Electron app with React",
-  "author": "willjw3",
+  "author": "me",
   "build": {
     "appId": "react.electron",
     "win": {
@@ -13,12 +13,16 @@
   },
   "homepage": "./",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "cross-env": "^7.0.2",
     "electron-is-dev": "^1.2.0",
+    "frameless-titlebar": "^2.1.3",
+    "is-electron": "^2.2.0",
     "leaflet": "^1.7.1",
+    "notistack": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.7.0",

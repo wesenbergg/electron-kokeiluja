@@ -4,11 +4,18 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
 let mainWindow;
+ 
 function createWindow() {
     mainWindow = new BrowserWindow({ 
         width: 1200, 
         height: 800,
         icon: "",
+        frame: false,
+        titleBarStyle: 'hidden',
+        webPreferences: {
+          nodeIntegration: false,
+          preload: __dirname + '/preload.js'
+        }
     });
      
 

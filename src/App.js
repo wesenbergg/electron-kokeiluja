@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useSnackbar } from 'notistack'
 
+const { ipcRenderer } = window.require('electron');
 const position = [60.16985569999999, 24.938379]
 
 const App = () => {
@@ -33,10 +34,10 @@ const App = () => {
       app="Electron"
       menu={defaultMenu}
       className="titleBar"
-      onClose={() => { enqueueSnackbar('close clicked', { variant: 'error' }) }}
-      onMinimize={() => { enqueueSnackbar('minimized clicked', { variant: 'success' }) }}
-      onMaximize={() => { enqueueSnackbar('maximized clicked', { variant: 'success' }) }}
-      onDoubleClick={() => { enqueueSnackbar('double clicked', { variant: 'success' }) }}
+      onClose={() => ipcRenderer.send("close")}
+      onMinimize={() => ipcRenderer.send("minimize")}
+      onMaximize={() => ipcRenderer.send("maximize")}
+      //onDoubleClick={() => { enqueueSnackbar('double clicked', { variant: 'success' }) }}
     />
     <Map center={position} zoom={15}>
       <TileLayer
